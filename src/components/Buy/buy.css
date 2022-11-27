@@ -1,0 +1,92 @@
+.main-rent{
+    margin-top: 50px;
+}
+.top-rent{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.top-right img{
+    height: 350px;
+}
+
+.top-left{
+    margin-left: 30px;
+}
+
+.top-left p{
+    font-size: 18px;
+    color: #718096;
+}
+
+.top-left a{
+    text-decoration: none;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #41b3e8;
+}
+
+.top-left button{
+    margin-top: 30px;
+    padding: 10px 30px;
+    background-color: #41b3e8;
+    border: none;
+}
+
+.top-left a:hover{
+    text-decoration: underline;
+    background-color: #36a5d8;
+}
+
+.top-left button:hover{
+    background-color: #36a5d8;
+}
+
+
+.rent-properties{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    width: 80%;
+    margin: auto;
+
+}
+
+.renatal-property{
+   width: 100px;
+   margin-bottom: 30px;
+}
+
+.rental-property img{
+    width: 100%;
+    height: 300px;
+}
+
+.rental-property h1{
+    font-size: 22px;
+}
+
+.rental-property p{
+    font-size: 20px;
+}
+
+.arrangments {
+    display: flex;
+}
+
+.arrangments p{
+    font-size: 18px;
+    margin: 0 5px;
+}
+
+.rent-price{
+    font-weight: bolder;
+}
+
+.rent-property:hover{
+    cursor: pointer;
+}
