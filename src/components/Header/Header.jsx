@@ -8,12 +8,12 @@ const Header = () => {
        <div className="header">
         <div className="main-header">
                 <div className="left-nav">
-                    <h1><span>SG</span> Real Estates</h1>
+                    <Link to="/"><h1><span>SG</span> Real Estates</h1></Link>
                 </div>
                 <div className="right-nav">
                     <ul className="lists">
-                        <li><Link to="/rent">Rent a Property</Link></li>
-                        <li><Link to="/buy">Buy a Property</Link></li>
+                        <li><Link to="/property?search=for-rent">Rent a Property</Link></li>
+                        <li><Link to="/property?search=for-sale">Buy a Property</Link></li>
                     </ul>
                 </div>
             </div>
