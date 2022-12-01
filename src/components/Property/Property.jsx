@@ -6,9 +6,10 @@ import { useState } from 'react'
 import {FaBed,FaBath}  from 'react-icons/fa';
 import {MdVerified} from 'react-icons/md'
 import Footer from '../Footer/Footer';
-
+import { useNavigate } from 'react-router-dom';
 
 const Property = () => {
+  let navigate=useNavigate()
     const queryParams = new URLSearchParams(window.location.search);
     const id = queryParams.get('search')
     console.log(id)
@@ -19,8 +20,8 @@ const Property = () => {
         const options = {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': '758433eed8msh1b83c00f1eafc96p1725b0jsn7a4a8f836b86',
-                'X-RapidAPI-Host': 'bayut.p.rapidapi.com'
+              'X-RapidAPI-Key': '554a610cc4msh18364354a110776p136e73jsn0b0054604854',
+              'X-RapidAPI-Host': 'bayut.p.rapidapi.com'
             }
         };
         
@@ -30,6 +31,13 @@ const Property = () => {
             .catch(err => console.error(err));
       },[]);
 
+      function handleClick(e,id){
+        
+        e.preventDefault();
+        console.log(id)
+        console.log(e);
+        navigate(`property-info?id=${id}`);
+    } 
 
 
 
@@ -54,6 +62,7 @@ const Property = () => {
                                     <p><span><FaBath/></span> {item.baths}</p>
                                     <p>Area: {item.area}sqft</p>
                                 </div>
+                                    <p className='details' onClick={(e)=>handleClick(e,parseInt(item._highlightResult.externalID.value))}>Deatils ....</p>
                            </div>
                     )
 						

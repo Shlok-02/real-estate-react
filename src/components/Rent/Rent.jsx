@@ -5,8 +5,12 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import {FaBed,FaBath}  from 'react-icons/fa';
 import {MdVerified} from 'react-icons/md'
+import { useNavigate } from 'react-router-dom';
+
+
 
 const Rent = () => {
+    let navigate=useNavigate();
     let rentImg=require("../../Images/house rent.jpg")
 
     const [rentHomes,setRentHomes]=useState([])
@@ -14,7 +18,7 @@ const Rent = () => {
         const options = {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': '758433eed8msh1b83c00f1eafc96p1725b0jsn7a4a8f836b86',
+                'X-RapidAPI-Key': '554a610cc4msh18364354a110776p136e73jsn0b0054604854',
                 'X-RapidAPI-Host': 'bayut.p.rapidapi.com'
             }
         };
@@ -25,7 +29,13 @@ const Rent = () => {
             .catch(err => console.error(err));
       },[]);
 
-     
+    function handleClick(e,id){
+        
+        e.preventDefault();
+        console.log(id)
+        console.log(e);
+        navigate(`property-info?id=${id}`);
+    } 
 
   return (
     <>
@@ -47,7 +57,8 @@ const Rent = () => {
 				rentHomes.map(function(item){
 
 					return (
-                           <div className="rental-property">
+                        
+                           <div className="rental-property" >
                                 <img src={item.coverPhoto.url} alt="" />
                                 <p><span><MdVerified/></span>{item.title}</p>
                                 <p className='rent-price'>AED {item.price}/monthly</p>
@@ -56,7 +67,10 @@ const Rent = () => {
                                     <p><span><FaBath/></span> {item.baths}</p>
                                     <p>Area: {item.area}sqft</p>
                                 </div>
+                              {/*   {console.log(item._highlightResult.externalID.value)} */}
+                                <p className='details' onClick={(e)=>handleClick(e,parseInt(item._highlightResult.externalID.value))}>Deatils ....</p>
                            </div>
+                       
                     )
 						
 				})

@@ -9,7 +9,7 @@ const Home = () => {
         <div className="main-home">
             <Header/>
             <Rent/>
-            <Buy/>
+             <Buy/>
             <Footer/>
         </div>
     </>

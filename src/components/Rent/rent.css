@@ -57,6 +57,11 @@
 
 }
 
+.rent-properties a{
+    text-decoration: none;
+    color: black;
+}
+
 .renatal-property{
    width: 100px;
   margin-bottom: 30px;
@@ -92,5 +97,13 @@
 }
 
 .rent-property:hover{
+    cursor: pointer;
+}
+
+.details{
+    color: #1f8be3;
+}
+
+.details:hover{
     cursor: pointer;
 }

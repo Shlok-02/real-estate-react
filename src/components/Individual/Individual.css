@@ -1,0 +1,22 @@
+.main-indi{
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.main-indi img{
+    width: 100%;
+}
+
+.arrangments {
+    display: flex;
+}
+
+.arrangments p{
+    font-size: 18px;
+    margin: 0 5px;
+}
+
+span{
+    color: #1f8be3;
+}
